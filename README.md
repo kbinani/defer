@@ -2,6 +2,8 @@
 
 `defer` for C++, like Swift
 
+[![CI](https://github.com/kbinani/defer/actions/workflows/main.yml/badge.svg)](https://github.com/kbinani/defer/actions/workflows/main.yml)
+
 # example
 
 ```c++
