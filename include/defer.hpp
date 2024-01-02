@@ -27,7 +27,7 @@ public:
 private:
   std::function<void()> const fn;
 };
-}
+} // namespace com::github::kbinani
 
 #define com_github_kbinani_defer_helper2(line) com_github_kbinani_defer_##line
 #define com_github_kbinani_defer_helper(line) com_github_kbinani_defer_helper2(line)
