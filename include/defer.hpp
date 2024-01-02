@@ -3,7 +3,7 @@
 #include <functional>
 
 namespace com::github::kbinani {
-class defer_t {
+class defer_t final {
 public:
   template <class T>
   defer_t(T fn) : fn(fn) {}
@@ -13,10 +13,15 @@ public:
     }
     try {
       fn();
-    } catch (...) {}
+    } catch (...) {
+    }
   }
+  defer_t(defer_t const &) = delete;
+  defer_t &operator=(defer_t const &) = delete;
+  defer_t(defer_t &&) = delete;
+  defer_t &operator=(defer_t &&) = delete;
 private:
-  std::function<void()> fn;
+  std::function<void()> const fn;
 };
 }
 
