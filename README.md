@@ -1,6 +1,6 @@
 # defer
 
-`defer` for c++, like Swift
+`defer` for C++, like Swift
 
 # example
 
@@ -10,9 +10,17 @@
 
 int main() {
     defer {
-        std::cout << "on exit" << std::endl;
+        std::cout << 3 << std::endl;
     };
-    std::cout << "on start" << std::endl;
+    defer {
+        std::cout << 2 << std::endl;
+    };
+    std::cout << 0 << std::endl;
+    {
+        defer {
+            std::cout << 1 << std::endl;
+        };
+    }
     return 0;
 }
 ```
