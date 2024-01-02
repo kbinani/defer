@@ -2,6 +2,10 @@
 
 #include <functional>
 
+#if defined(defer)
+#error "'defer' macro already defined"
+#endif
+
 namespace com::github::kbinani {
 class defer_t final {
 public:
