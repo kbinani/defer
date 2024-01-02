@@ -32,4 +32,4 @@ private:
 #define com_github_kbinani_defer_helper2(line) com_github_kbinani_defer_##line
 #define com_github_kbinani_defer_helper(line) com_github_kbinani_defer_helper2(line)
 
-#define defer ::com::github::kbinani::defer_t com_github_kbinani_defer_helper(__LINE__) = [&](void) -> void
+#define defer ::com::github::kbinani::defer_t const com_github_kbinani_defer_helper(__LINE__) = [&]() -> void
