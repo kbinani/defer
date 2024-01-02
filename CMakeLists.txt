@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
-project(defer)
+project(defer LANGUAGES CXX)
 
 add_library(defer INTERFACE include/defer.hpp)
-target_include_directories(defer INTERFACE include)
+target_include_directories(defer INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if ("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
   set(BUILD_SHARED_LIBS OFF)
